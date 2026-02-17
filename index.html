@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Habit Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="dot"></div>
+      <h1>Habit Calendar</h1>
+    </div>
+
+    <div class="controls">
+      <button id="prevBtn" class="btn">‹</button>
+      <div class="monthLabel" id="monthLabel">Month YYYY</div>
+      <button id="nextBtn" class="btn">›</button>
+      <button id="todayBtn" class="btn btnSecondary">Today</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="panelRow">
+        <div class="people">
+          <span class="tag">People</span>
+          <button class="pill active" id="p0Btn" type="button"></button>
+          <button class="pill" id="p1Btn" type="button"></button>
+        </div>
+
+        <div class="habits">
+          <span class="tag">Habits</span>
+          <div id="habitChips" class="chips"></div>
+          <button id="addHabitBtn" class="btn btnSmall">+ Habit</button>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="hint">Click a day → tick habits → it saves automatically (this device/browser).</span>
+        <button id="resetMonthBtn" class="btn btnDanger btnSmall">Reset month</button>
+      </div>
+    </section>
+
+    <section class="calendar" aria-label="Monthly habit calendar">
+      <div class="dow">
+        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+      </div>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <dialog id="dayDialog" class="dialog">
+    <form method="dialog" class="dialogInner">
+      <div class="dialogHeader">
+        <div>
+          <div class="dialogTitle" id="dialogTitle">Day</div>
+          <div class="dialogSub" id="dialogSub">Person • Month</div>
+        </div>
+        <button class="iconBtn" value="cancel" aria-label="Close">✕</button>
+      </div>
+
+      <div id="dialogHabits" class="dialogHabits"></div>
+
+      <div class="dialogFooter">
+        <button class="btn btnSecondary" value="cancel">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
